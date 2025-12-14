@@ -139,3 +139,4 @@ For this BNPL credit scoring project, we will:
 - Monitor both models in production to gather evidence for future regulatory discussions about model complexity
 
 This balanced approach ensures we meet regulatory requirements while also building organizational capability to leverage more sophisticated techniques as the regulatory landscape and our data maturity evolve.
+
