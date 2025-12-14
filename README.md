@@ -126,7 +126,7 @@ In our regulated financial context, the optimal approach balances these trade-of
    - **For Customer-Facing Decisions**: Prioritize models that can provide clear explanations when credit is denied
 
 4. **Performance vs. Risk Trade-off**:
-   - If model accuracy差距 (performance gap) is minimal (e.g., <2% AUC difference), favor interpretability
+   - If model accuracy gap (performance gap) is minimal (e.g., <2% AUC difference), favor interpretability
    - If complex model shows significantly better performance (e.g., >5% improvement in recall), might justify extra effort in explainability (SHAP values, local interpretability)
 
 **Conclusion:**
