@@ -1,5 +1,7 @@
-# Data files
-data/
+# Data files (but allow documentation)
+data/*
+!data/*.md
+!data/**/*.md
 
 # Python
 __pycache__/
