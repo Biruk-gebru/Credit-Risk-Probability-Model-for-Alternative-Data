@@ -179,6 +179,12 @@ def train_model():
         mlflow.log_metric("roc_auc", auc)
         
         mlflow.sklearn.log_model(best_model, "best_model")
+        
+        # Save model locally for deployment
+        import joblib
+        os.makedirs('models', exist_ok=True)
+        joblib.dump(best_model, 'models/model.pkl')
+        print("Best model saved to models/model.pkl")
 
 if __name__ == "__main__":
     train_model()
