@@ -1,5 +1,83 @@
 # Credit-Risk-Probability-Model-for-Alternative-Data
 
+## Project Overview
+
+This project aims to build a Credit Risk Probability Model for a Buy-Now-Pay-Later (BNPL) service. By leveraging alternative data sources (eCommerce transactions), we assess the creditworthiness of customers who lack traditional credit history. The solution includes a complete machine learning pipeline from data analysis to model deployment.
+
+## Project Structure
+
+```
+├── .github/workflows/   # CI/CD pipeline
+├── data/                # Data storage (raw & processed)
+├── models/              # Trained models
+├── notebooks/           # Jupyter notebooks for EDA and experiments
+├── src/                 # Source code
+│   ├── api/             # FastAPI application
+│   ├── data_processing.py # Data transformation pipelines
+│   ├── train.py         # Model training script
+│   └── utils.py         # Utility functions
+├── tests/               # Unit tests
+├── Dockerfile           # Docker configuration
+├── docker-compose.yml   # Docker Compose configuration
+├── requirements.txt     # Python dependencies
+└── README.md            # Project documentation
+```
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Biruk-gebru/Credit-Risk-Probability-Model-for-Alternative-Data.git
+   cd Credit-Risk-Probability-Model-for-Alternative-Data
+   ```
+
+2. **Create a virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Training the Model
+
+To train the model and save it locally:
+```bash
+python src/train.py
+```
+This will generate `models/model.pkl` and log experiments to MLflow.
+
+### Running the API
+
+You can run the API locally or using Docker.
+
+**Locally:**
+```bash
+uvicorn src.api.main:app --reload
+```
+
+**Using Docker:**
+```bash
+docker-compose up --build
+```
+
+The API will be available at `http://localhost:8000`.
+Documentation is available at `http://localhost:8000/docs`.
+
+## API Endpoints
+
+- `GET /`: Health check.
+- `POST /predict`: Predict credit risk.
+  - **Input**: JSON object with transaction details.
+  - **Output**: JSON object with `prediction` (0 or 1) and `probability`.
+
+---
+
 ## Credit Scoring Business Understanding
 
 ### 1. Basel II Accord's Emphasis on Risk Measurement and Interpretability

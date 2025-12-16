@@ -50,3 +50,5 @@ TASKS.md
 .DS_Store
 Thumbs.db
 temp_plots/
+models/
+mlflow.db
